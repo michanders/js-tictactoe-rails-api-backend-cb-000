@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   end
 
   def update
-    game = Game.find(params[:id]).update(state: params[:state])
+    game = Game.find_by_id(params[:id]).update(state: params[:state])
     render json: game, status: 200
   end
 end
